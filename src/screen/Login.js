@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ImageBackground, StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; 
 
 const Login = () => {
-  
-  const navigation = useNavigation(); 
+  const navigation = useNavigation();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleContinueAsGuest = () => {
-    
     navigation.navigate('Home');
   };
+
+  const handleLogin = () => {
+    // Implement your login logic here
+    console.log('Login pressed');
+  };
+
+  const handleSignup = () => {
+    // Implement your signup logic here
+    console.log('Signup pressed');
+  };
+
+  const handleForgotPassword = () => {
+    console.log('Forgot Password pressed');
+  };
+
+  const handleAlreadyUser = () => {
+    console.log('Already have an account? Sign in');
+  };
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -26,6 +45,8 @@ const Login = () => {
             style={styles.input}
             placeholder="seksria@gmail.com"
             placeholderTextColor="#333"
+            value={email}
+            onChangeText={text => setEmail(text)}
           />
           <View style={styles.inputHeaderContainer}>
             <Text style={styles.inputHeader}>Password</Text>
@@ -35,25 +56,26 @@ const Login = () => {
             placeholder="78965Abc"
             placeholderTextColor="#333"
             secureTextEntry={true}
+            value={password}
+            onChangeText={text => setPassword(text)}
           />
         </View>
         <View style={styles.buttonsContainer}>
-          <TouchableOpacity style={styles.loginbutton} onPress={() => console.log('Login pressed')}>
+          <TouchableOpacity style={styles.loginbutton} onPress={handleLogin}>
             <Text style={styles.loginbuttonText}>Login</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.signupbutton} onPress={() => console.log('Signup pressed')}>
+          <TouchableOpacity style={styles.signupbutton} onPress={handleSignup}>
             <Text style={styles.signupbuttonText}>Signup</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.forgotPassword} onPress={() => console.log('Forgot Password pressed')}>
+        <TouchableOpacity style={styles.forgotPassword} onPress={handleForgotPassword}>
           <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
         </TouchableOpacity>
       </ImageBackground>
       <TouchableOpacity style={styles.nextButton} onPress={handleContinueAsGuest}>
         <Text style={styles.nextButtonText}>Continue as a guest</Text>
-        {/* onPress={()=> navigation.navigate("Home")} */}
       </TouchableOpacity>
-      <TouchableOpacity style={styles.alreadyuser} onPress={() => console.log('Already have an account? Sign in')}>
+      <TouchableOpacity style={styles.alreadyuser} onPress={handleAlreadyUser}>
         <Text style={styles.alreadyuserText}>Already have an account? Sign in</Text>
       </TouchableOpacity>
     </View>
@@ -63,8 +85,6 @@ const Login = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   backgroundImage: {
     flex: 1,
@@ -77,18 +97,15 @@ const styles = StyleSheet.create({
   inputContainer: {
     padding: 20,
     borderRadius: 0,
-    width: '76%',
+    width: '85%',
     alignItems: 'center',
-    bottom: -120,
-    height: '36%',
+    top: 90,
   },
   headerText: {
-    fontSize: 16,
+    fontSize: 19,
     fontWeight: 'bold',
-    marginBottom: 20,
     marginRight: 95.9,
     color: 'white',
-    marginLeft: -20
   },
   inputHeaderContainer: {
     alignSelf: 'flex-start',
@@ -97,17 +114,17 @@ const styles = StyleSheet.create({
   inputHeader: {
     fontSize: 12,
     color: 'white',
-    bottom: -34,
+    top: 34,
   },
   input: {
     height: 40,
     width: '110%',
-    borderColor: 'white',
+    borderColor: 'black',
     borderWidth: 1,
     borderRadius: 20,
     paddingHorizontal: 10,
     marginBottom: 10,
-    bottom: -30,
+    top: 30,
     backgroundColor: 'white',
   },
   buttonsContainer: {
@@ -115,17 +132,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '60%',
     position: 'absolute',
-    bottom: 55,
+    bottom: 98,
   },
   loginbutton: {
-    backgroundColor: 'blue',
+    backgroundColor: '#0D40A2',
     padding: 10,
     borderRadius: 20,
     width: '50%', 
     borderWidth: 1,
     borderColor: 'black',
-    marginRight: 40,
-    marginLeft: -30
+    marginLeft:-35
   },
   loginbuttonText: {
     textAlign: 'center',
@@ -139,11 +155,11 @@ const styles = StyleSheet.create({
     width: '50%',
     borderWidth: 1,
     borderColor: 'black',
-    marginLeft: 27,
+    marginLeft: 75,
   },
   signupbuttonText: {
     textAlign: 'center',
-    color: 'blue',
+    color: '#0D40A2',
     fontWeight: 'bold',
   },
   forgotPassword: {
@@ -154,14 +170,15 @@ const styles = StyleSheet.create({
   },
   forgotPasswordText: {
     color: 'white',
-    fontSize: 10
+    fontSize: 10,
+    bottom:30,
   },
   nextButton: {
     position: 'absolute',
     bottom: 146, 
     padding: 10,
     borderRadius: 20,
-    backgroundColor: 'blue', 
+    backgroundColor: '#0D40A2', 
     width: '50%',
   },
   nextButtonText: {

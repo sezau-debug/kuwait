@@ -35,7 +35,7 @@ const App = () => {
 
   return (
         <NavigationContainer> 
-        <Stack.Navigator initialRouteName="intro_01" screenOptions={{headerShown: false,}}>
+        <Stack.Navigator initialRouteName="Intro_01" screenOptions={{headerShown: false,}}>
         <Stack.Screen name="intro" component={Intro_01}  />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Splash" component={Splash} />
@@ -60,7 +60,7 @@ const App = () => {
         <Stack.Screen name ="Screen1" component={Screen1} />
         <Stack.Screen name ="Screen2" component={Screen2}/> 
         <Stack.Screen name ="Screen4" component={Screen4} /> 
-        <Stack.Screen name ="full" component={fullScreen}/>  
+        {/* <Stack.Screen name ="full" component={fullScreen}/>   */}
         <Stack.Screen name="LocationScreen" component={LocationScreen} />
         <Stack.Screen name="CurrencyScreen" component={CurrencyScreen} />
         <Stack.Screen name="CultureScreen" component={CultureScreen} />
