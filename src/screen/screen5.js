@@ -11,7 +11,7 @@ const Screen5 = () => {
             <Image source={require('../assets/images/user (3).png')} style={styles.button} />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => { /* Handle second button press */ }}>
-            <Image source={require('../assets/imagesw/user (3).png')} style={styles.button} />
+            <Image source={require('../assets/images/user (3).png')} style={styles.button} />
           </TouchableOpacity>
         </View>
       </View>

@@ -33,6 +33,7 @@ const BottomTabNavigator = () => {
         contentContainerStyle: { padding: 20 },
         customView: (
           <View>
+            <View>hiiiiiiii</View>
             <Dropdown
               label="Events Type"
               data={[
