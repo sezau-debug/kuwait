@@ -1,11 +1,21 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, Text, View, Image, TextInput,secureTextEntry , TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native'; 
 
 const Rgst = () => {
+  const navigation = useNavigation();
+  const handleAlreadyUser = () => {
+    navigation.navigate('Login');
+    console.log('Already have an account? Sign in');
+  };
+  const handleNext = () => {
+    navigation.navigate('Home');
+    console.log('next pressed');
+  };
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require('../images/Ellipse 9.png')}
+        source={require('../assets/images/Ellipse 9.png')}
         style={styles.backgroundImage}
         imageStyle={{ resizeMode: 'cover' }}
       >
@@ -41,7 +51,7 @@ const Rgst = () => {
        
         </View>
         <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.loginbutton} onPress={() => console.log('Login pressed')}>
+        <TouchableOpacity style={styles.loginbutton} onPress={handleNext}>
           <Text style={styles.loginbuttonText}>Next</Text>
           
         </TouchableOpacity>
@@ -53,7 +63,7 @@ const Rgst = () => {
       </ImageBackground>
       
 
-        <TouchableOpacity style={styles.alreadyuser} onPress={() => console.log('Already have an account? Sign in')}>
+        <TouchableOpacity style={styles.alreadyuser}  onPress={handleAlreadyUser}>
           <Text style={styles.alreadyuserText}>Already have an account? Sign in</Text>
         </TouchableOpacity>
     </View>

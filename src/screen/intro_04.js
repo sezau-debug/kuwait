@@ -14,7 +14,7 @@ const Intro_04 = () => {
          
       
       <Image
-        source={require('../src/images/Group 58.png')}
+        source={require('../assets/images/Group 58.png')}
         style={styles.image1}
         imageStyle={{ resizeMode: 'cover' }}
       />
@@ -36,14 +36,14 @@ const Intro_04 = () => {
 
     
     <View style={styles.imageRowContainer}>
-      <ImageContainer imageSource={require('../src/images/Ellipse 19.png')} />
-      <ImageContainer imageSource={require('../src/images/Ellipse 20.png')} />
-      <ImageContainer imageSource={require('../src/images/Ellipse 21.png')} />
-      <ImageContainer imageSource={require('../src/images/Ellipse 22.png')} />
+      <ImageContainer imageSource={require('../assets/images/Ellipse 19.png')} />
+      <ImageContainer imageSource={require('../assets/images/Ellipse 20.png')} />
+      <ImageContainer imageSource={require('../assets/images/Ellipse 21.png')} />
+      <ImageContainer imageSource={require('../assets/images/Ellipse 22.png')} />
       </View>
       
       <Image
-        source={require('../src/images/4 1.png')}
+        source={require('../assets/images/4 1.png')}
         style={styles.image}
         imageStyle={{ resizeMode: 'cover' }}
       /> 

@@ -12,7 +12,7 @@ const CultureScreen = () => {
       {/* Scrollable content */}
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         {/* Image */}
-        <Image source={require('./Images/Group 13.png')} style={styles.image} />
+        <Image source={require('../assets/images/Group 13.png')} style={styles.image} />
 
         {/* Subheading */}
         <Text style={styles.subheading}>Culture</Text>

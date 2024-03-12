@@ -29,14 +29,14 @@ const Lng = () => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require('../images/Rectangle 142.png')}
+        source={require('../assets/images/Rectangle 142.png')}
         style={styles.backgroundImage}
         imageStyle={{ resizeMode: 'cover' }}
       >
-         <Image source={require('../images/pattern.png')} style={styles.image}/>
+         <Image source={require('../assets/images/pattern.png')} style={styles.image}/>
          
-         <Image source={require('../images/redBtm.png')} style={styles.image1}/>
-         <Image source={require('../images/Mask group.png')} style={styles.image2}/>
+         <Image source={require('../assets/images/redBtm.png')} style={styles.image1}/>
+         <Image source={require('../assets/images/Mask group.png')} style={styles.image2}/>
          
         
         <TouchableOpacity style={[styles.button, styles.englishButton]} onPress={handleEnglishButtonClick}>
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     color:'white'
   },
   englishButton: {
-    backgroundColor: 'blue',
+    backgroundColor: '#0D40A2',
     width: '50%',
   },
   urduButton: {
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   },
   urduButtonText: {
     fontFamily: 'UrduFont',
-    color: 'blue',
+    color: '#0D40A2',
   },
   nextButton: {
     position: 'absolute',
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   nextButtonText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: 'blue',
+    color: '#0D40A2',
     textAlign:'center'
   },
 });

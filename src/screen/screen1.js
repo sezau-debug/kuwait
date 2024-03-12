@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import fullScreen from './fullScreen';
-
-const choices = ['Dinning Deals', 'Hotel Deals', 'Tourist Friendly', 'Luncheon Deals', 'Party Deals', 'contest deals', 'Tech Deals', 'Weekend Deals'];
+import DetailScreen from './DetailScreen';
+import Header from './Header';
+const choices = ['Music', 'Game', 'Expo', 'Health', 'Dance', 'Party', 'Tech', 'Swim'];
 
 const DATA1 = [
-  { id: '1', image: require('./Images/event1.jpg'), heading: 'live concert' },
-  { id: '2', image: require('./Images/event2.jpg'), heading: 'red quick race' },
-  { id: '3', image: require('./Images/event3.jpg'), heading: 'singer artist' },
-  { id: '4', image: require('./Images/EVENT4.jpg'), heading: 'adventure' },
+  { id: '1', image: require('../assets/images/event1.jpg'), heading: 'live concert' },
+  { id: '2', image: require('../assets/images/event2.jpg'), heading: 'red quick race' },
+  { id: '3', image: require('../assets/images/event3.jpg'), heading: 'singer artist' },
+  { id: '4', image: require('../assets/images/EVENT4.jpg'), heading: 'adventure' },
 ];
 
-const Screen2 = () => {
+const Screen1 = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedButtons, setSelectedButtons] = useState([]);
   const navigation = useNavigation(); 
@@ -27,7 +27,7 @@ const Screen2 = () => {
 
   const toggleImageSelection = (item) => {
     setSelectedItem(item);
-    navigation.navigate('full' , { heading: item.heading } ); 
+    navigation.navigate('detail' , { heading: item.heading } ); 
   };
 
   const isButtonSelected = (item) => {
@@ -48,7 +48,7 @@ const Screen2 = () => {
               style={[styles.selectionButton, isButtonSelected(item) && styles.selectedButton]}
               onPress={() => toggleItemSelection(item)}
             >
-              <Text>{item}</Text>
+              <Text style={[styles.buttonText, isButtonSelected(item) && styles.selectedButtonText]}>{item}</Text>
             </TouchableOpacity>
           ))}
         </View>
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     marginBottom:20,
   },
   item: {
+    
     alignItems: 'center',
     marginVertical: 5,
     width: '50%',
@@ -97,13 +98,13 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 150,
+    height: 180,
     marginBottom: 5,
     borderRadius: 9,
   },
   buttonContainer: {
     flexDirection: 'row',
-    marginTop: 20,
+    marginTop: 10,
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center',
@@ -111,17 +112,25 @@ const styles = StyleSheet.create({
   selectionButton: {
     padding: 5,
     borderColor: 'grey',
-    borderWidth: 1,
+    borderWidth: 2,
     marginHorizontal: 5,
     borderRadius: 16,
     justifyContent: 'center',
     alignItems: 'center',
     height: 40,
-    width: 130,
+    width: 80,
+    borderWidth:1
   },
   selectedButton: {
-    borderColor: 'blue',
+    backgroundColor: '#0D40A2',
   },
+  buttonText: {
+    color: 'black',
+  },
+  selectedButtonText: {
+    color: 'white',
+  },
+  
   flatListContent: {
     alignItems: 'center',
     paddingTop:1,
@@ -130,9 +139,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'flex-end',
-    marginTop: 0,
-    marginBottom: 20,
+    marginBottom: 10,
+    marginLeft:10
   },
 });
 
-export default Screen2;
+export default Screen1;

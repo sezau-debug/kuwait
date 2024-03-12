@@ -8,10 +8,10 @@ const Screen5 = () => {
         <Text style={styles.header}>Choose Language</Text>
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={() => { /* Handle first button press */ }}>
-            <Image source={require('./Images/user (3).png')} style={styles.button} />
+            <Image source={require('../assets/images/user (3).png')} style={styles.button} />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => { /* Handle second button press */ }}>
-            <Image source={require('./Images/user (3).png')} style={styles.button} />
+            <Image source={require('../assets/imagesw/user (3).png')} style={styles.button} />
           </TouchableOpacity>
         </View>
       </View>

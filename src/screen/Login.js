@@ -12,11 +12,12 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    // Implement your login logic here
+    navigation.navigate('Home');
     console.log('Login pressed');
   };
 
   const handleSignup = () => {
+    navigation.navigate('Rgst');
     // Implement your signup logic here
     console.log('Signup pressed');
   };
@@ -25,14 +26,12 @@ const Login = () => {
     console.log('Forgot Password pressed');
   };
 
-  const handleAlreadyUser = () => {
-    console.log('Already have an account? Sign in');
-  };
+  
 
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require('../images/Ellipse 9.png')}
+        source={require('../assets/images/Ellipse 9.png')}
         style={styles.backgroundImage}
         imageStyle={{ resizeMode: 'cover' }}
       >
@@ -75,9 +74,7 @@ const Login = () => {
       <TouchableOpacity style={styles.nextButton} onPress={handleContinueAsGuest}>
         <Text style={styles.nextButtonText}>Continue as a guest</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.alreadyuser} onPress={handleAlreadyUser}>
-        <Text style={styles.alreadyuserText}>Already have an account? Sign in</Text>
-      </TouchableOpacity>
+     
     </View>
   );
 };
@@ -180,6 +177,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: '#0D40A2', 
     width: '50%',
+    marginLeft:89
   },
   nextButtonText: {
     fontSize: 12,
@@ -189,7 +187,8 @@ const styles = StyleSheet.create({
   },
   alreadyuser: {
     bottom: 25,
-    position: 'absolute'
+    position: 'absolute',
+    marginLeft:70
   },
   alreadyuserText: {
     color: 'gray',

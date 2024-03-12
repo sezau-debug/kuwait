@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Import useNavigation hook
+import { useNavigation } from '@react-navigation/native'; 
 
 const OnboardingScreen = () => {
   const slides = [
@@ -8,25 +8,25 @@ const OnboardingScreen = () => {
       id: '1',
       title: 'Welcome',
       subtitle: 'to the official Kuwait Events Calendar',
-      image: require('../images/3 1.png'),
+      image: require('../assets/images/3 1.png'),
     },
     {
       id: '2',
       title: 'Accurate Event Location',
       subtitle: 'Plan your event & we will guide you',
-      image: require('../images/6 1.png'),
+      image: require('../assets/images/6 1.png'),
     },
     {
       id: '3',
       title: 'We made it easier for you',
       subtitle: 'Our application has tickets for all events',
-      image: require('../images/5 1.png'),
+      image: require('../assets/images/5 1.png'),
     },
     {
       id: '4',
       title: 'What are your preferred events?',
       subtitle: 'Filter events based on your interests',
-      image: require('../images/4 1.png'),
+      image: require('../assets/images/4 1.png'),
     },
   ];
 

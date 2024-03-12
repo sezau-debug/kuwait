@@ -12,7 +12,7 @@ const LocationScreen = () => {
       {/* Scrollable content */}
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         {/* Image */}
-        <Image source={require('./Images/icon (1).png')} style={styles.image} />
+        <Image source={require('../assets/images/icon (1).png')} style={styles.image} />
 
         {/* Subheading */}
         <Text style={styles.subheading}>Location</Text>

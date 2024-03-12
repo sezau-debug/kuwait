@@ -5,17 +5,17 @@ const Splash = () => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require('../images/Rectangle 142.png')}
+        source={require('../assets/images/Rectangle 142.png')}
         style={styles.backgroundImage}
         imageStyle={{ resizeMode: 'cover' }}
       >
         
-        <Image source={require('../images/pattern.png')} style={styles.image2}/>
-        <Image source={require('../images/Group 15.png')} style={styles.image1} />
-        <Image source={require('../images/patternTitleRight 1.png')} style={styles.image3}/>
-        <Image source={require('../images/Mask group.png')} style={styles.image}/> 
-        <Image source ={require('../images/patternTitleLeft 1.png')} style={styles.image4}/>
-        <Image source={require('../images/Group 16.png')} style={styles.image5}/>
+        <Image source={require('../assets/images/pattern.png')} style={styles.image2}/>
+        <Image source={require('../assets/images/Group 15.png')} style={styles.image1} />
+        <Image source={require('../assets/images/patternTitleRight 1.png')} style={styles.image3}/>
+        <Image source={require('../assets/images/Mask group.png')} style={styles.image}/> 
+        <Image source ={require('../assets/images/patternTitleLeft 1.png')} style={styles.image4}/>
+        <Image source={require('../assets/images/Group 16.png')} style={styles.image5}/>
       
       </ImageBackground>
 
@@ -54,7 +54,7 @@ image:{
 },
 image2:{
 position:"relative",
-marginBottom:15,
+//marginBottom:15,
 marginLeft:20,
 },
  image3:{

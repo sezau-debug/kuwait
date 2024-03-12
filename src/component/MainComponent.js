@@ -6,18 +6,18 @@ import DetailsScreen from './DetailsScreen';
 import BoxComponent from './BoxComponent'; // Import BoxComponent from its file
 
 const data = [
-    { id: '1', logo: require('../images/roller-coaster-svgrepo-com 1.png'), heading: 'Experiences' },
-    { id: '2', logo: require('../images/icon.png'), heading: 'Game' },
-    { id: '4', logo: require('../images/swimming-svgrepo-com 1.png'), heading: 'Water Games' },
-    { id: '5', logo: require('../images/theater-masks-svgrepo-com 1.png'), heading: 'Theatre' },
-    { id: '6', logo: require('../images/restaurant-outline-svgrepo-com 1.png'), heading: 'Restaurant' },
-    { id: '7', logo: require('../images/kids-couple-svgrepo-com 1.png'), heading: 'Kids' },
-    { id: '8', logo: require('../images/family-4-people-svgrepo-com 1.png'), heading: 'Families' },
-    { id: '9', logo: require('../images/paris-louvre-svgrepo-com 1.png'), heading: 'Exhibition' },
-    { id: '10', logo: require('../images/shopping-bag-svgrepo-com 1.png'), heading: 'Shopping' },
-    { id: '11', logo: require('../images/microphone-svgrepo-com 1.png'), heading: 'Concert' },
-    { id: '12', logo: require('../images/cafe-svgrepo-com 1.png'), heading: 'Cafe' },
-    { id: '13', logo: require('../images/art-gallery-svgrepo-com 1.png'), heading: 'Art' },
+    { id: '1', logo: require('../assets/images/roller-coaster-svgrepo-com 1.png'), heading: 'Experiences' },
+    { id: '2', logo: require('../assets/images/icon.png'), heading: 'Game' },
+    { id: '4', logo: require('../assets/images/swimming-svgrepo-com 1.png'), heading: 'Water Games' },
+    { id: '5', logo: require('../assets/images/theater-masks-svgrepo-com 1.png'), heading: 'Theatre' },
+    { id: '6', logo: require('../assets/images/restaurant-outline-svgrepo-com 1.png'), heading: 'Restaurant' },
+    { id: '7', logo: require('../assets/images/kids-couple-svgrepo-com 1.png'), heading: 'Kids' },
+    { id: '8', logo: require('../assets/images/family-4-people-svgrepo-com 1.png'), heading: 'Families' },
+    { id: '9', logo: require('../assets/images/paris-louvre-svgrepo-com 1.png'), heading: 'Exhibition' },
+    { id: '10', logo: require('../assets/images/shopping-bag-svgrepo-com 1.png'), heading: 'Shopping' },
+    { id: '11', logo: require('../assets/images/microphone-svgrepo-com 1.png'), heading: 'Concert' },
+    { id: '12', logo: require('../assets/images/cafe-svgrepo-com 1.png'), heading: 'Cafe' },
+    { id: '13', logo: require('../assets/images/art-gallery-svgrepo-com 1.png'), heading: 'Art' },
 ];
 
 const MainComponent = () => {
@@ -49,20 +49,20 @@ const MainComponent = () => {
       />
 
       <Image
-        source={require('../images/redBtm.png')}
+        source={require('../assets/images/redBtm.png')}
         style={styles.backgroundImage}
       />
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={handleSelectAll}>
           <View style={styles.buttonContent}>
-            <Image source={require('../images/Ellipse 24.png')} style={styles.logo} />
+            <Image source={require('../assets/images/Ellipse 24.png')} style={styles.logo} />
             <Text style={styles.buttonText}>Select All</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={handleContinue}>
           <View style={styles.buttonContent}>
             <Text style={styles.buttonText1}>Continue</Text>
-            <Image source={require('../images/Vector (2).png')} style={styles.logo} />
+            <Image source={require('../assets/images/Vector (2).png')} style={styles.logo} />
           </View>
         </TouchableOpacity>
       </View>

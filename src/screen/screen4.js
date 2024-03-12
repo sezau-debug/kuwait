@@ -11,9 +11,9 @@ const Stack = createStackNavigator();
 const screen4 = ({ navigation }) => {
   // Data for FlatList
   const data = [
-    { id: '1' , image: require('./Images/icon (1).png'), title: 'Location', description: 'Discover various locations around the world.', screen: 'LocationScreen' },
-    { id: '2', image: require('./Images/Group 13.png'), title: 'Currency', description: 'Learn about different currencies and exchange rates.', screen: 'CurrencyScreen' },
-    { id: '3', image: require('./Images/Group 27.png') , title: 'Culture', description: 'Explore diverse cultures and traditions,  here different diversity exists.', screen: 'CultureScreen' },
+    { id: '1' , image: require('../assets/images/icon (1).png'), title: 'Location', description: 'Discover various locations around the world.', screen: 'LocationScreen' },
+    { id: '2', image: require('../assets/images/Group 13.png'), title: 'Currency', description: 'Learn about different currencies and exchange rates.', screen: 'CurrencyScreen' },
+    { id: '3', image: require('../assets/images/Group 27.png') , title: 'Culture', description: 'Explore diverse cultures and traditions,  here different diversity exists.', screen: 'CultureScreen' },
   ];
 
   // Render item for FlatList

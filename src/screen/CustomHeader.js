@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import Login from '../../screen/Login';
+import Login from '../screen/Login';
 
 const CustomHeader = () => {
   const navigation = useNavigation();
@@ -22,7 +22,7 @@ const CustomHeader = () => {
       <View style={styles.curveBottom} />
       <View style={styles.headerContent}>
         <View style={styles.logoContainer}>
-          <Image source={require('./Images/user.png')} style={styles.logo} />
+          <Image source={require('../assets/images/user.png')} style={styles.logo} />
           <View style={styles.textContainer}>
             <Text style={styles.text}>test</Text>
             <Text style={styles.text}>seksria@gmail.com</Text>
@@ -30,11 +30,11 @@ const CustomHeader = () => {
         </View>
         {/* Like Button */}
         <TouchableOpacity onPress={handleLike} style={styles.likeButton}>
-          <Image source={require('./Images/tickets.png')} style={styles.likeIcon} />
+          <Image source={require('../assets/images/tickets.png')} style={styles.likeIcon} />
         </TouchableOpacity>
         {/* Logout Button */}
         <TouchableOpacity onPress={handleLogout}>
-          <Image source={require('./Images/switchoff.png')} style={styles.switchIcon} />
+          <Image source={require('../assets/images/switchoff.png')} style={styles.switchIcon} />
         </TouchableOpacity>
       </View>
     </View>

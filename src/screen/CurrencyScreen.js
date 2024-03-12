@@ -12,7 +12,7 @@ const CurrencyScreen = () => {
       {/* Scrollable content */}
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         {/* Image */}
-        <Image source={require('./Images/Group 27.png')} style={styles.image} />
+        <Image source={require('../assets/images/Group 27.png')} style={styles.image} />
 
         {/* Subheading */}
         <Text style={styles.subheading}>Currency</Text>

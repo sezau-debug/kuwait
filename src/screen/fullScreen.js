@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity, Modal } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 
 const fullScreen = ({ route }) => {
-  
+  const navigation = useNavigation(); 
   const { heading } = route.params;
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -35,10 +36,10 @@ const fullScreen = ({ route }) => {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <Image source={require('./Images/event1.jpg')} style={styles.image} />
+        <Image source={require('../assets/images/event1.jpg')} style={styles.image} />
         <Text style={styles.heading}>Outdoor & Sports Activities expo </Text>
         <View style={styles.descriptionContainer}>
-          <Image source={require('./Images/Vector.png')} style={styles.logo} />
+          <Image source={require('../assets/images/Vector.png')} style={styles.logo} />
           <Text style={styles.descriptionText}>kuwait International club zone-Hall4A</Text>
         </View>
         <View style={styles.dateContainer}>
@@ -46,9 +47,9 @@ const fullScreen = ({ route }) => {
           <Text style={styles.dateText2}>End Date</Text>
         </View>
         <View style={styles.descriptionContainer}>
-          <Image source={require('./Images/calendar-svgrepo-com 1.png')} style={styles.logo} />
+          <Image source={require('../assets/images/calendar-svgrepo-com 1.png')} style={styles.logo} />
           <Text style={styles.descriptionText1}>14 Feb, 2024</Text>
-          <Image source={require('./Images/calendar-svgrepo-com 1.png')} style={styles.logo1} />
+          <Image source={require('../assets/images/calendar-svgrepo-com 1.png')} style={styles.logo1} />
           <Text style={styles.descriptionText2}>24 March, 2024</Text>
         </View>
         <Text style={styles.heading}>About Event </Text>
@@ -61,8 +62,8 @@ const fullScreen = ({ route }) => {
           </View>
         </TouchableOpacity>
         <Text style={styles.heading}>Gallery </Text>
-        <TouchableOpacity onPress={() => openModal(require('./Images/event1.jpg'))}>
-          <Image source={require('./Images/event1.jpg')} style={styles.image1} />
+        <TouchableOpacity onPress={() => openModal(require('../assets/images/event1.jpg'))}>
+          <Image source={require('../assets/images/event1.jpg')} style={styles.image1} />
         </TouchableOpacity>
         <Modal
           animationType="slide"
@@ -79,7 +80,7 @@ const fullScreen = ({ route }) => {
           </View>
         </Modal>
         <Text style={styles.heading}>Sitemap  </Text>
-        <Image source={require('./Images/map.png.jpeg')} style={styles.image2} />
+        <Image source={require('../assets/images/map.png.jpeg')} style={styles.image2} />
        
       </ScrollView>
       <View style={styles.buttonContainer}>
@@ -92,7 +93,7 @@ const fullScreen = ({ route }) => {
         <TouchableOpacity style={styles.button} onPress={handleBook}>
           <View style={styles.buttonContent}>
             <Text style={styles.buttonText1}>Book Now</Text>
-            <Image source={require('./Images/Vector (3).png')} style={styles.logo} />
+            <Image source={require('../assets/images/Vector (3).png')} style={styles.logo} />
           </View>
         </TouchableOpacity>
       </View>
