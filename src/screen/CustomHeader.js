@@ -34,7 +34,7 @@ const CustomHeader = () => {
         </TouchableOpacity>
         {/* Logout Button */}
         <TouchableOpacity onPress={handleLogout}>
-          <Image source={require('../assets/images/switchoff.png')} style={styles.switchIcon} />
+          <Image source={require('../assets/images/logout.png')} style={styles.switchIcon} />
         </TouchableOpacity>
       </View>
     </View>
@@ -104,8 +104,8 @@ const styles = StyleSheet.create({
     height: 75,
   },
   switchIcon: {
-    width: 25,
-    height: 25,
+    width:29,
+    height: 29,
     marginLeft: 20,
     top:20
   },

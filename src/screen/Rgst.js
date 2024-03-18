@@ -1,16 +1,76 @@
-import React from 'react';
-import { ImageBackground, StyleSheet, Text, View, Image, TextInput,secureTextEntry , TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { ImageBackground, StyleSheet, Text, View, Image, TextInput,secureTextEntry , TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; 
 
 const Rgst = () => {
   const navigation = useNavigation();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const handleAlreadyUser = () => {
     navigation.navigate('Login');
     console.log('Already have an account? Sign in');
   };
-  const handleNext = () => {
-    navigation.navigate('Home');
-    console.log('next pressed');
+  const handleNext = async () => {
+    try {
+      setLoading(true);
+      // Define your payload
+      const payload = {
+        name: 'Sejal',
+        email: 'sejal30@gmail.com',
+        password: '12345678',
+        mobile_no: '8798987654',
+        age: 28,
+        date_of_birth: '1991-12-16',
+        country_id: 85,
+        city_id: 112433,
+        visitor_intrest: [1, 2, 4, 5],
+        device_id: '740f4707 bebcf74f 9b7c25d4 8e335894 5f6aa01d a5ddb387 462c7eaf 61bb78ad',
+      };
+
+      // Make API call with payload
+      const response = await axios.post('https://www.admin.visitkuwait.com.kw/api/visitor-registration', payload);
+
+      setLoading(false);
+    } catch (error) {
+      // Handle errors
+      console.error('Error:', error);
+
+      // Show error message
+      Alert.alert('Registration Failed', 'An error occurred while registering. Please try again.');
+
+      setLoading(false);
+    }
+  };
+    if (!email.trim() || !password.trim()) {
+
+      Alert.alert('Validation Error', 'Please fill in both email and password.');
+    } else if (!validateEmail(email)) {
+ 
+      Alert.alert('Validation Error', 'Please enter a valid email address.');
+    } else if (!validatePassword(password)) {
+  
+      Alert.alert('Validation Error', 'Password must be alphanumeric.');
+    } else {
+
+      navigation.navigate('Home');
+      console.log('Login pressed');
+    }
+  };
+  const validateName = (name) => {
+    const regex = /^[A-Za-z\s]+$/;
+    return regex.test(name);
+  };
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])/;
+    return regex.test(password);
   };
   return (
     <View style={styles.container}>
@@ -29,24 +89,30 @@ const Rgst = () => {
             style={styles.input}
             placeholder="Name"
             placeholderTextColor="#333"
+            value={name}
+            onChangeText={text => setName(text)}
           />
           
             <View style={styles.inputHeaderContainer}>
             <Text style={styles.inputHeader}>Email</Text>
           </View>
           <TextInput
-            style={styles.input}
-            placeholder="seksria@gmail.com"
-            placeholderTextColor="#333"
+          style={styles.input}
+          placeholder="seksria@gmail.com"
+          placeholderTextColor="#333"
+          value={email}
+          onChangeText={text => setEmail(text)}
           />
           <View style={styles.inputHeaderContainer}>
             <Text style={styles.inputHeader}>Password</Text>
           </View>
           <TextInput
-            style={styles.input}
-            placeholder="78965Abc"
-            placeholderTextColor="#333"
-            secureTextEntry={true}
+           style={styles.input}
+           placeholder="78965Abc"
+           placeholderTextColor="#333"
+           secureTextEntry={true}
+           value={password}
+           onChangeText={text => setPassword(text)}
           />
        
         </View>
@@ -68,7 +134,7 @@ const Rgst = () => {
         </TouchableOpacity>
     </View>
   );
-};
+
 
 const styles = StyleSheet.create({
   container: {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ImageBackground, StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, Image, TextInput, TouchableOpacity , Alert} from 'react-native';
 import { useNavigation } from '@react-navigation/native'; 
 
 const Login = () => {
@@ -12,20 +12,44 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    navigation.navigate('Home');
-    console.log('Login pressed');
+    // Check if email and password are valid
+    if (!email.trim() || !password.trim()) {
+      // Show alert if email or password is empty
+      Alert.alert('Validation Error', 'Please fill in both email and password.');
+    } else if (!validateEmail(email)) {
+      // Show alert if email is not in valid format
+      Alert.alert('Validation Error', 'Please enter a valid email address.');
+    } else if (!validatePassword(password)) {
+      // Show alert if password is not alphanumeric
+      Alert.alert('Validation Error', 'Password must be alphanumeric.');
+    } else {
+      
+      // Navigate to Home screen if data is valid
+      navigation.navigate('Home');
+      console.log('Login pressed');
+    }
   };
+
 
   const handleSignup = () => {
     navigation.navigate('Rgst');
-    // Implement your signup logic here
+    
     console.log('Signup pressed');
   };
 
   const handleForgotPassword = () => {
     console.log('Forgot Password pressed');
   };
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
 
+  // Function to validate password format (alphanumeric)
+  const validatePassword = (password) => {
+    const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])/;
+    return regex.test(password);
+  };
   
 
   return (
