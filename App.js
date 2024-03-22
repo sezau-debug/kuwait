@@ -34,7 +34,7 @@ const App = () => {
 
   return (
         <NavigationContainer> 
-        <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false,}}>
+        <Stack.Navigator initialRouteName="Rgst" screenOptions={{headerShown: false,}}>
         <Stack.Screen name="intro" component={Intro_01} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Splash" component={Splash} />

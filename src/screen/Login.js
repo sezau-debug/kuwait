@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 import { ImageBackground, StyleSheet, Text, View, Image, TextInput, TouchableOpacity , Alert} from 'react-native';
 import { useNavigation } from '@react-navigation/native'; 
 
@@ -12,24 +13,36 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    // Check if email and password are valid
+    
     if (!email.trim() || !password.trim()) {
-      // Show alert if email or password is empty
+  
       Alert.alert('Validation Error', 'Please fill in both email and password.');
     } else if (!validateEmail(email)) {
-      // Show alert if email is not in valid format
+  
       Alert.alert('Validation Error', 'Please enter a valid email address.');
     } else if (!validatePassword(password)) {
-      // Show alert if password is not alphanumeric
+      
       Alert.alert('Validation Error', 'Password must be alphanumeric.');
     } else {
+    
+      axios.post('https://www.admin.visitkuwait.com.kw/api/login', {
+        email: email,
+        password: password
+      })
+      .then(response => {
+        
+        console.log('Login successful:', response.data);
+        
+        navigation.navigate('Home');
+      })
+      .catch(error => {
       
-      // Navigate to Home screen if data is valid
-      navigation.navigate('Home');
-      console.log('Login pressed');
+        console.error('Login error:', error);
+        
+        Alert.alert('Login Error', 'An error occurred while logging in. Please try again.');
+      });
     }
   };
-
 
   const handleSignup = () => {
     navigation.navigate('Rgst');
@@ -45,7 +58,6 @@ const Login = () => {
     return regex.test(email);
   };
 
-  // Function to validate password format (alphanumeric)
   const validatePassword = (password) => {
     const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])/;
     return regex.test(password);

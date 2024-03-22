@@ -16,7 +16,6 @@ const Rgst = () => {
   const handleNext = async () => {
     try {
       setLoading(true);
-      // Define your payload
       const payload = {
         name: 'Sejal',
         email: 'sejal30@gmail.com',
@@ -30,15 +29,13 @@ const Rgst = () => {
         device_id: '740f4707 bebcf74f 9b7c25d4 8e335894 5f6aa01d a5ddb387 462c7eaf 61bb78ad',
       };
 
-      // Make API call with payload
       const response = await axios.post('https://www.admin.visitkuwait.com.kw/api/visitor-registration', payload);
-
       setLoading(false);
     } catch (error) {
-      // Handle errors
+      
       console.error('Error:', error);
 
-      // Show error message
+      
       Alert.alert('Registration Failed', 'An error occurred while registering. Please try again.');
 
       setLoading(false);
@@ -67,7 +64,6 @@ const Rgst = () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
-
   const validatePassword = (password) => {
     const regex = /^(?=.*[a-zA-Z])(?=.*[0-9])/;
     return regex.test(password);
@@ -81,7 +77,6 @@ const Rgst = () => {
       >
         <View style={styles.inputContainer}>
           <Text style={styles.headerText}>signing with your preferred options</Text>
-          
           <View style={styles.inputHeaderContainer}>
             <Text style={styles.inputHeader}>Name</Text>
           </View>
@@ -114,12 +109,11 @@ const Rgst = () => {
            value={password}
            onChangeText={text => setPassword(text)}
           />
-       
         </View>
         <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.loginbutton} onPress={handleNext}>
           <Text style={styles.loginbuttonText}>Next</Text>
-          
+
         </TouchableOpacity>
        
       </View>
@@ -127,8 +121,7 @@ const Rgst = () => {
         
         
       </ImageBackground>
-      
-
+    
         <TouchableOpacity style={styles.alreadyuser}  onPress={handleAlreadyUser}>
           <Text style={styles.alreadyuserText}>Already have an account? Sign in</Text>
         </TouchableOpacity>
@@ -214,7 +207,6 @@ const styles = StyleSheet.create({
     marginLeft:-20,
     bottom:5
     
-    
   },
   loginbuttonText: {
     textAlign: 'center',
@@ -222,10 +214,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
  
- 
-
- 
-
   alreadyuser:{
     bottom:320,
     position:'absolute'
